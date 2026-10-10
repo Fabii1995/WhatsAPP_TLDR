@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WhatsApp TLDR - Options</title>
+  <style>
+    body { font: 14px system-ui, sans-serif; max-width: 520px; margin: 24px auto; padding: 0 16px; }
+    label { display: block; margin: 14px 0 4px; font-weight: 600; }
+    input[type=text], input[type=password], input[type=number] { width: 100%; padding: 6px; box-sizing: border-box; }
+    .note { color: #666; font-size: 12px; margin-top: 4px; }
+    button { margin-top: 18px; padding: 6px 16px; }
+    #status { margin-inline-start: 10px; color: #0a7; }
+  </style>
+</head>
+<body>
+  <h2>WhatsApp TLDR</h2>
+  <label><input type="checkbox" id="enabled"> Show TLDR button on long messages</label>
+
+  <label for="provider">Provider</label>
+  <select id="provider">
+    <option value="gemini">Google AI Studio (Gemini)</option>
+    <option value="claude">Anthropic (Claude)</option>
+  </select>
+
+  <label for="apiKey">API key</label>
+  <input type="password" id="apiKey" placeholder="AI Studio key (AIza...) or Anthropic key (sk-ant-...)">
+  <div class="note">
+    Stored only in this browser. When you click TLDR on a message, that message's text is sent to
+    the selected provider to be summarized. Nothing is sent unless you click. On the Gemini free
+    tier, Google may use submitted content to improve its products.
+  </div>
+
+  <label for="geminiModel">Gemini model (used when provider is Gemini)</label>
+  <input type="text" id="geminiModel" placeholder="gemini-2.5-flash">
+
+  <label for="minLines">A message is long if it has at least this many non-empty lines</label>
+  <input type="number" id="minLines" min="1">
+  <label for="minChars">...or at least this many characters (not counting spaces)</label>
+  <input type="number" id="minChars" min="1">
+
+  <button id="save">Save</button><span id="status"></span>
+  <script src="options.js"></script>
+</body>
+</html>

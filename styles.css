@@ -1,0 +1,28 @@
+.tldr-wrap {
+  padding: 2px 8px 6px;
+  font-size: 13px;
+}
+.tldr-btn {
+  border: 1px solid #00a884;
+  background: transparent;
+  color: #00a884;
+  border-radius: 12px;
+  padding: 1px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tldr-btn:hover:not(:disabled) { background: #00a88422; }
+.tldr-btn:disabled { opacity: 0.6; cursor: default; }
+.tldr-card {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-inline-start: 3px solid #00a884;
+  border-radius: 6px;
+  background: rgba(0, 168, 132, 0.12);
+  color: inherit;
+  white-space: pre-wrap;
+  line-height: 1.35;
+}
+.tldr-loading { opacity: 0.7; font-style: italic; }
+.tldr-error { border-inline-start-color: #e5484d; background: rgba(229, 72, 77, 0.12); }
